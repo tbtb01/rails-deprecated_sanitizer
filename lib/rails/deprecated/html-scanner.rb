@@ -5,7 +5,6 @@ module HTML
   extend ActiveSupport::Autoload
 
   eager_autoload do
-    autoload :DeprecatedSanitizer, 'html/sanitizer'
     autoload :CDATA, 'html/node'
     autoload :Document, 'html/document'
     autoload :FullSanitizer, 'html/sanitizer'
