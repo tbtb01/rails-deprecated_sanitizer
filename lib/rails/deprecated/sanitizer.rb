@@ -1,5 +1,6 @@
 require "rails/deprecated/sanitizer/version"
 require "rails/deprecated/sanitizer/html-scanner"
+require "active_support/lazy_load_hooks"
 
 module Rails
   module Deprecated
@@ -37,4 +38,8 @@ module ActionView
       HTML::WhiteListSanitizer.allowed_attributes = attributes
     end
   end
+end
+
+ActiveSupport.on_load(:action_view) do
+  ActionView::SanitizeHelper.sanitizer_vendor = Rails::Deprecated::Sanitizer
 end
