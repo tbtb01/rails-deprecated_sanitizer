@@ -1,4 +1,5 @@
 require "rails/deprecated/sanitizer/version"
+require 'rails/deprecated/sanitizer/html-scanner'
 
 module Rails
   module Deprecated
