@@ -1,4 +1,3 @@
-require 'active_support/deprecation'
 $LOAD_PATH.unshift "#{File.dirname(__FILE__)}/html-scanner"
 
 module HTML
