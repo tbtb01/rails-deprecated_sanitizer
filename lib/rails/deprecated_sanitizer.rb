@@ -39,5 +39,5 @@ module ActionView
 end
 
 ActiveSupport.on_load(:action_view) do
-  ActionView::SanitizeHelper.sanitizer_vendor = Rails::Deprecated::Sanitizer
+  ActionView::SanitizeHelper.sanitizer_vendor = Rails::DeprecatedSanitizer
 end
