@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in rails-deprecated_sanitizer.gemspec
+gem 'rails', github: 'kaspth/rails', branch: 'loofah-integration'
+gem 'rails-html-sanitizer', github: 'rails/rails-html-sanitizer'
+
 gemspec
