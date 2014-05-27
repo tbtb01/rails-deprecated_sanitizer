@@ -1,9 +1,10 @@
 require "rails/deprecated_sanitizer/version"
 require "rails/deprecated_sanitizer/html-scanner"
-require "active_support/lazy_load_hooks"
 
 module Rails
   module DeprecatedSanitizer
+    extend self
+
     def full_sanitizer
       HTML::FullSanitizer
     end
@@ -21,6 +22,12 @@ end
 module ActionView
   module Helpers
     module SanitizeHelper
+      extend self
+
+      def sanitizer_vendor
+        Rails::DeprecatedSanitizer
+      end
+
       def sanitized_allowed_tags
         HTML::WhiteListSanitizer.allowed_tags
       end
@@ -38,8 +45,4 @@ module ActionView
       end
     end
   end
-end
-
-ActiveSupport.on_load(:action_view) do
-  ActionView::Helpers::SanitizeHelper.sanitizer_vendor = Rails::DeprecatedSanitizer
 end
