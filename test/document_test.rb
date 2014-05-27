@@ -1,5 +1,5 @@
-require 'abstract_unit'
-require 'action_view/vendor/html-scanner'
+require 'test_helper'
+require 'rails/deprecated/html-scanner'
 
 class DocumentTest < ActiveSupport::TestCase
   def test_handle_doctype

@@ -1,5 +1,5 @@
-require 'abstract_unit'
-require 'action_view/vendor/html-scanner/html/tokenizer'
+require 'test_helper'
+require 'rails/deprecated/html-scanner/html/tokenizer'
 
 class TokenizerTest < ActiveSupport::TestCase
 

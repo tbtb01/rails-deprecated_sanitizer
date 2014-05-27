@@ -1,5 +1,5 @@
-require 'abstract_unit'
-require 'action_view/vendor/html-scanner/html/node'
+require 'test_helper'
+require 'rails/deprecated/html-scanner/html/node'
 
 class NodeTest < ActiveSupport::TestCase
 
