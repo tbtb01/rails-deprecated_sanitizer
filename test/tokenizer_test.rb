@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'rails/deprecated/html-scanner/html/tokenizer'
+require 'rails/deprecated_sanitizer/html-scanner/html/tokenizer'
 
 class TokenizerTest < ActiveSupport::TestCase
 

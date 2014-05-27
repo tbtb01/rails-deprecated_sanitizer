@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rails/deprecated/sanitizer/version'
+require 'rails/deprecated_sanitizer/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rails-deprecated-sanitizer"
-  spec.version       = Rails::Deprecated::Sanitizer::VERSION
+  spec.name          = "rails-deprecated_sanitizer"
+  spec.version       = Rails::DeprecatedSanitizer::VERSION
   spec.authors       = ["Timm"]
   spec.email         = ["kaspth@gmail.com"]
   spec.summary       = %q{TODO: Write a short summary. Required.}

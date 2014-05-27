@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'rails/deprecated/html-scanner'
+require 'rails/deprecated_sanitizer/html-scanner'
 
 class DocumentTest < ActiveSupport::TestCase
   def test_handle_doctype

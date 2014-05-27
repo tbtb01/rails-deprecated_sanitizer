@@ -1,21 +1,19 @@
-require "rails/deprecated/sanitizer/version"
-require "rails/deprecated/sanitizer/html-scanner"
+require "rails/deprecated_sanitizer/version"
+require "rails/deprecated_sanitizer/html-scanner"
 require "active_support/lazy_load_hooks"
 
 module Rails
-  module Deprecated
-    module Sanitizer
-      def full_sanitizer
-        HTML::FullSanitizer
-      end
+  module DeprecatedSanitizer
+    def full_sanitizer
+      HTML::FullSanitizer
+    end
 
-      def link_sanitizer
-        HTML::LinkSanitizer
-      end
+    def link_sanitizer
+      HTML::LinkSanitizer
+    end
 
-      def white_list_sanitizer
-        HTML::WhiteListSanitizer
-      end
+    def white_list_sanitizer
+      HTML::WhiteListSanitizer
     end
   end
 end

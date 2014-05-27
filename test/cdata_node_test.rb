@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'rails/deprecated/html-scanner/html/node'
+require 'rails/deprecated_sanitizer/html-scanner/html/node'
 
 class CDATANodeTest < ActiveSupport::TestCase
   def setup
