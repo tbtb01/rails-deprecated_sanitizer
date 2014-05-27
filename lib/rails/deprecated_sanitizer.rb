@@ -32,7 +32,7 @@ module ActionView
         HTML::WhiteListSanitizer.allowed_tags
       end
 
-      def sanitized_allowed_tags=(*tags)
+      def sanitized_allowed_tags=(tags)
         HTML::WhiteListSanitizer.allowed_tags = tags
       end
 
@@ -40,7 +40,7 @@ module ActionView
         HTML::WhiteListSanitizer.allowed_attributes
       end
 
-      def sanitized_allowed_attributes=(*attributes)
+      def sanitized_allowed_attributes=(attributes)
         HTML::WhiteListSanitizer.allowed_attributes = attributes
       end
     end
