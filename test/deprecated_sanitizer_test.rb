@@ -19,4 +19,9 @@ class DeprecatedSanitizerTest < ActiveSupport::TestCase
     sanitize_helper.sanitized_allowed_tags = %w(horse)
     assert_equal %w(horse), HTML::WhiteListSanitizer.allowed_tags
   end
+
+  test 'setting allowed attributes modifies HTML::WhiteListSanitizers allowed attributes' do
+    sanitize_helper.sanitized_allowed_attributes = 'for', 'your', 'health'
+    assert_equal %w(for your health), HTML::WhiteListSanitizer.allowed_attributes
+  end
 end
