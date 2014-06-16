@@ -1,29 +1,16 @@
 # Rails::Deprecated::Sanitizer
 
-TODO: Write a gem description
+In Rails 4.2 the sanitization implementation uses Loofah by default.
+Previously html-scanner was used for this.
+This gem includes that old behavior for easier migration and it will be supported until Rails 5.
 
-## Installation
-
-Add this line to your application's Gemfile:
+If you need this behavior, add the gem to an applications gemfile, run `bundle` and the deprecated behavior is installed.
 
     gem 'rails-deprecated_sanitizer'
 
-And then execute:
+You can read more about the new behavior here: [rails-html-sanitizer](https://github.com/rails/rails-html-sanitizer).
 
-    $ bundle
+# Reporting XSS Security Issues
 
-Or install it yourself as:
-
-    $ gem install rails-deprecated_sanitizer
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/rails-deprecated_sanitizer/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+The code provided here deals with XSS attacks and is therefore a security concern.
+So if you find a security issue please follow the [regular security reporting guidelines](http://rubyonrails.org/security/).
