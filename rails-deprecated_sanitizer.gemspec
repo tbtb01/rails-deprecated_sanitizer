@@ -8,9 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Rails::DeprecatedSanitizer::VERSION
   spec.authors       = ["Timm"]
   spec.email         = ["kaspth@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Deprecated sanitizer API extracted from Action View.}
+  spec.homepage      = "https://github.com/rails/rails-deprecated_sanitizer"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
