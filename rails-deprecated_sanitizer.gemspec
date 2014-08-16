@@ -6,7 +6,7 @@ require 'rails/deprecated_sanitizer/version'
 Gem::Specification.new do |spec|
   spec.name          = "rails-deprecated_sanitizer"
   spec.version       = Rails::DeprecatedSanitizer::VERSION
-  spec.authors       = ["Timm"]
+  spec.authors       = ["Kasper Timm Hansen"]
   spec.email         = ["kaspth@gmail.com"]
   spec.summary       = %q{Deprecated sanitizer API extracted from Action View.}
   spec.homepage      = "https://github.com/rails/rails-deprecated_sanitizer"
