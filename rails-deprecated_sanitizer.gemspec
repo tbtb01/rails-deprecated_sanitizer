@@ -12,13 +12,11 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/rails/rails-deprecated_sanitizer"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files         = Dir["CHANGELOG.md", "LICENSE", "README.md", "lib/**/*"]
+  spec.test_files    = Dir["test/**/*.rb"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "activesupport"
-  spec.add_dependency "actionview"
+  spec.add_dependency "activesupport", ">= 4.2.0.alpha"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
