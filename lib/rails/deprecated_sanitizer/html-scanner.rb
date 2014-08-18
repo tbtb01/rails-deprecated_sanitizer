@@ -1,3 +1,4 @@
+require 'active_support/dependencies/autoload'
 $LOAD_PATH.unshift "#{File.dirname(__FILE__)}/html-scanner"
 
 module HTML
