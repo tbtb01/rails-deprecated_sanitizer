@@ -4,7 +4,9 @@ require 'action_view/helpers/sanitize_helper'
 
 class DeprecatedSanitizerTest < ActiveSupport::TestCase
   def sanitize_helper
-    ActionView::Helpers::SanitizeHelper
+    Class.new do
+      include ActionView::Helpers::SanitizeHelper
+    end
   end
 
   test 'Action View sanitizer vendor is set to deprecated sanitizer' do
