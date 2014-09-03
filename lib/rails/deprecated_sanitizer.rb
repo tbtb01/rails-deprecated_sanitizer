@@ -1,6 +1,7 @@
 require "rails/deprecated_sanitizer/version"
 require "rails/deprecated_sanitizer/html-scanner"
 require "rails/deprecated_sanitizer/railtie" if defined?(Rails::Railtie)
+require "active_support/core_ext/module/remove_method"
 
 module Rails
   module DeprecatedSanitizer
@@ -24,35 +25,35 @@ module ActionView
   module Helpers
     module SanitizeHelper
       module ClassMethods
-        def sanitized_protocol_separator
+        redefine_method :sanitized_protocol_separator do
           white_list_sanitizer.protocol_separator
         end
 
-        def sanitized_uri_attributes
+        redefine_method :sanitized_uri_attributes do
           white_list_sanitizer.uri_attributes
         end
 
-        def sanitized_bad_tags
+        redefine_method :sanitized_bad_tags do
           white_list_sanitizer.bad_tags
         end
 
-        def sanitized_allowed_css_properties
+        redefine_method :sanitized_allowed_css_properties do
           white_list_sanitizer.allowed_css_properties
         end
 
-        def sanitized_allowed_css_keywords
+        redefine_method :sanitized_allowed_css_keywords do
           white_list_sanitizer.allowed_css_keywords
         end
 
-        def sanitized_shorthand_css_properties
+        redefine_method :sanitized_shorthand_css_properties do
           white_list_sanitizer.shorthand_css_properties
         end
 
-        def sanitized_allowed_protocols
+        redefine_method :sanitized_allowed_protocols do
           white_list_sanitizer.allowed_protocols
         end
 
-        def sanitized_protocol_separator=(value)
+        redefine_method :sanitized_protocol_separator= do |value|
           white_list_sanitizer.protocol_separator = value
         end
 
@@ -62,7 +63,7 @@ module ActionView
         #     config.action_view.sanitized_uri_attributes = 'lowsrc', 'target'
         #   end
         #
-        def sanitized_uri_attributes=(attributes)
+        redefine_method :sanitized_uri_attributes= do |attributes|
           HTML::WhiteListSanitizer.uri_attributes.merge(attributes)
         end
 
@@ -72,7 +73,7 @@ module ActionView
         #     config.action_view.sanitized_bad_tags = 'embed', 'object'
         #   end
         #
-        def sanitized_bad_tags=(attributes)
+        redefine_method :sanitized_bad_tags= do |attributes|
           HTML::WhiteListSanitizer.bad_tags.merge(attributes)
         end
 
@@ -82,7 +83,7 @@ module ActionView
         #     config.action_view.sanitized_allowed_tags = 'table', 'tr', 'td'
         #   end
         #
-        def sanitized_allowed_tags=(attributes)
+        redefine_method :sanitized_allowed_tags= do |attributes|
           HTML::WhiteListSanitizer.allowed_tags.merge(attributes)
         end
 
@@ -92,7 +93,7 @@ module ActionView
         #     config.action_view.sanitized_allowed_attributes = ['onclick', 'longdesc']
         #   end
         #
-        def sanitized_allowed_attributes=(attributes)
+        redefine_method :sanitized_allowed_attributes= do |attributes|
           HTML::WhiteListSanitizer.allowed_attributes.merge(attributes)
         end
 
@@ -102,7 +103,7 @@ module ActionView
         #     config.action_view.sanitized_allowed_css_properties = 'expression'
         #   end
         #
-        def sanitized_allowed_css_properties=(attributes)
+        redefine_method :sanitized_allowed_css_properties= do |attributes|
           HTML::WhiteListSanitizer.allowed_css_properties.merge(attributes)
         end
 
@@ -112,7 +113,7 @@ module ActionView
         #     config.action_view.sanitized_allowed_css_keywords = 'expression'
         #   end
         #
-        def sanitized_allowed_css_keywords=(attributes)
+        redefine_method :sanitized_allowed_css_keywords= do |attributes|
           HTML::WhiteListSanitizer.allowed_css_keywords.merge(attributes)
         end
 
@@ -122,7 +123,7 @@ module ActionView
         #     config.action_view.sanitized_shorthand_css_properties = 'expression'
         #   end
         #
-        def sanitized_shorthand_css_properties=(attributes)
+        redefine_method :sanitized_shorthand_css_properties= do |attributes|
           HTML::WhiteListSanitizer.shorthand_css_properties.merge(attributes)
         end
 
@@ -132,7 +133,7 @@ module ActionView
         #     config.action_view.sanitized_allowed_protocols = 'ssh', 'feed'
         #   end
         #
-        def sanitized_allowed_protocols=(attributes)
+        redefine_method :sanitized_allowed_protocols= do |attributes|
           HTML::WhiteListSanitizer.allowed_protocols.merge(attributes)
         end
       end
