@@ -1,6 +1,4 @@
 require 'test_helper'
-require 'action_view'
-require 'action_view/helpers/sanitize_helper'
 
 class DeprecatedSanitizerTest < ActiveSupport::TestCase
   def sanitize_helper
