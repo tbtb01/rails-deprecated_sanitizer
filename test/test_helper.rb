@@ -10,3 +10,4 @@ require 'rails/deprecated_sanitizer'
 
 # Show backtraces for deprecated behavior for quicker cleanup.
 ActiveSupport::Deprecation.debug = true
+ActiveSupport::TestCase.test_order = :random
