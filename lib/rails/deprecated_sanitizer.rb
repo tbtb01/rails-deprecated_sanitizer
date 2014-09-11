@@ -25,6 +25,10 @@ module ActionView
   module Helpers
     module SanitizeHelper
       module ClassMethods
+        redefine_method :sanitizer_vendor do
+          Rails::DeprecatedSanitizer
+        end
+
         redefine_method :sanitized_protocol_separator do
           white_list_sanitizer.protocol_separator
         end
